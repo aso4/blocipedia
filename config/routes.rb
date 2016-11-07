@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'welcome/index'
+  resources :wikis
 
-  get 'welcome/about'
+  devise_for :users
+  default_url_options :host => "example.com" # line included to pass wiki_spec.rb
+
+  get 'about' => 'welcome#about'
 
   root 'welcome#index'
 
