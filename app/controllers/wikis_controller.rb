@@ -6,7 +6,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    Rails.logger.info "We're starting the controller #{current_user.inspect}"
+    #Rails.logger.info "We're starting the controller #{current_user.inspect}"
     @wiki = Wiki.new
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
