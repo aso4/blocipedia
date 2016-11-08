@@ -13,9 +13,10 @@ class WikisController < ApplicationController
     @wiki.private = params[:wiki][:private]
     @wiki.user = current_user
     #Rails.logger.warn(params)
+    #@wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
 
     if @wiki.save
-      flash[:notice] = "wiki was saved."
+      flash[:notice] = "Wiki was saved."
       redirect_to @wiki
     else
       flash.now[:alert] = "There was an error saving the wiki. Please try again."
@@ -32,5 +33,17 @@ class WikisController < ApplicationController
   end
 
   def edit
+    @wiki = Wiki.find(params[:id])
+  end
+
+  def update
+    @wiki = wiki.find(params[:id])
+    if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
+     flash[:notice] = "Wiki article was updated."
+     redirect_to @wiki
+    else
+     flash[:error] = "There was an error saving the wiki. Please try again."
+     render :edit
+    end
   end
 end
