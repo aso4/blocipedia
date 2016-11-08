@@ -7,37 +7,44 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # Create Wikis
 
-require 'random_data'
+require 'faker'
+
+# Create Users
+20.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: Faker::Lorem.characters(8)
+  )
+  user.skip_confirmation!
+  user.save!
+end
 
 # Create an admin user
-admin = User.create!(
+admin = User.new(
   email:    'admin@example.com',
-  password: 'helloworld',
-  confirmed_at: 'Thu, 03 Nov 2016 22:25:15 -0400'
+  password: 'helloworld'
 )
+admin.skip_confirmation!
+admin.save!
 
 # Create a member
-member = User.create!(
+member = User.new(
   email:    'member@example.com',
-  password: 'helloworld',
-  confirmed_at: 'Thu, 03 Nov 2016 22:25:15 -0400'
+  password: 'helloworld'
 )
+member.skip_confirmation!
+member.save!
 
-# Create a member
-a = User.create!(
-  email:    'a@example.com',
-  password: 'password',
-  confirmed_at: 'Thu, 03 Nov 2016 22:25:15 -0400'
-)
-
+# Create Wikis
 50.times do
-  Wiki.create!(
-    title:  RandomData.random_sentence,
-    body:   RandomData.random_paragraph,
-    user:   admin
-  )
-end
-wikis = Wiki.all
+   Wiki.create!(
+     title:  Faker::Lorem.sentence,
+     body:   Faker::Lorem.paragraph,
+     user:   User.last
+   )
+ end
+ Wikis = Wiki.all
 
-puts "Seed finished"
-puts "#{Wiki.count} wikis created"
+ puts "Seed finished"
+ puts "#{User.count} users created"
+ puts "#{Wiki.count} wikis created"

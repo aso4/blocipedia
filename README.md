@@ -1,24 +1,18 @@
-# README
+Blocipedia
+----
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application made using Ruby on Rails that allows users to create public and private Markdown-based wikis
 
-Things you may want to cover:
+A project from the Rails Web Development track on [Bloc](bloc.io).
 
-* Ruby version
+~User Stories~
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. User Sign Up (complete)
+2. User Sign In and Out (complete)
+3. Standard user: Create, read, update, and delete public wikis
+4. Offer three user roles: admin, standard, or premium
+5. Seed data with users and wikis (complete)
+6. Update user account from free to paid plan
+7. Create private wikis
+8. Edit wikis using Markdown syntax
+9. Premium user: add and remove collaborators for private wikis
