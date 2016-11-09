@@ -33,6 +33,7 @@ gem 'faker'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
+gem 'pundit'
 
 group :production do
   gem 'pg'
