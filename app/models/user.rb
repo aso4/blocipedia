@@ -23,6 +23,6 @@ class User < ApplicationRecord
   private
 
   def default_user_role_standard
-    self.role = 'standard'
+    self.role ||= 'standard'
   end
 end
