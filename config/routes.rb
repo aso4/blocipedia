@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  resources :wikis
-  resources :charges, only: [:new, :create]
   
+  get 'users/premium_to_standard'
+
+  resources :wikis
+  resources :charges
+
   devise_for :users
+  resources :users, only: [:show, :index] do
+    post 'premium_to_standard' => 'users#premium_to_standard', as: :premium_to_standard
+  end
+
   default_url_options :host => "example.com" # line included to pass wiki_spec.rb
 
-  get 'about' => 'welcome#about'
-
   root 'welcome#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
