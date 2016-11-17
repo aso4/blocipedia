@@ -5,4 +5,12 @@ class Wiki < ApplicationRecord
   validates :body, length: { minimum: 20 }, presence: true
   validates :user, presence: true
 
+  before_create :default_wiki_to_public
+
+  private
+
+  def default_wiki_to_public
+    self.private ||= false
+  end
+
 end
