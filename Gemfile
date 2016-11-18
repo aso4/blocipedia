@@ -35,6 +35,7 @@ gem 'devise'
 gem 'figaro'
 gem 'pundit'
 gem 'stripe'
+gem 'redcarpet'
 
 group :production do
   gem 'pg'
