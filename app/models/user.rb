@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   has_many :wikis
 
+  after_update :publicize_wikis_if_standard
+
   def standard?
     role == 'standard'
   end
@@ -18,6 +20,15 @@ class User < ApplicationRecord
 
   def admin?
     role == 'admin'
+  end
+
+  def publicize_wikis_if_standard
+    if standard?
+      wikis.each do |wiki|
+        wiki.private = false
+        wiki.save
+      end
+    end
   end
 
   private
