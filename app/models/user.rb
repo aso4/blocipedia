@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   before_create :default_user_role_standard
 
-  has_many :wikis
+  has_many :wikis, through: :collaborators
+  has_many :collaborators
 
   after_update :publicize_wikis_if_standard
 

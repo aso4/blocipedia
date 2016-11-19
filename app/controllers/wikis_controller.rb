@@ -2,7 +2,7 @@ require 'custom_logger'
 
 class WikisController < ApplicationController
     def index
-        @wikis = Wiki.all
+        @wikis = policy_scope(Wiki)
     end
 
     def create
@@ -32,7 +32,7 @@ class WikisController < ApplicationController
 
     def update
         @wiki = Wiki.find(params[:id])
-        if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
+        if @wiki.update_attributes(params.require(:wiki).permit(:title, :body, :private))
             flash[:notice] = 'Wiki article was updated.'
             redirect_to @wiki
         else

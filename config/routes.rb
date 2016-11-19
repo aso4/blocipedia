@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   get 'users/premium_to_standard'
 
-  resources :wikis
+  resources :wikis do
+    resources :collaborators
+  end
+  
   resources :charges
 
   devise_for :users

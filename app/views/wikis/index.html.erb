@@ -8,7 +8,7 @@
             <% if current_user.admin? || current_user.premium? %>
               <%= link_to wiki.title, wiki %>
             <% else %>
-              <% if not wiki.private? %>
+              <% if !wiki.private? %>
                 <%= link_to wiki.title, wiki %>
               <% end %>
             <% end %>
@@ -16,6 +16,12 @@
         </div>
       </div>
     <% end %>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 
   <div class="col-md-4">
