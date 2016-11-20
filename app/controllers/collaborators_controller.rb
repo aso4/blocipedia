@@ -4,7 +4,7 @@ class CollaboratorsController < ApplicationController
 
   def new
     @collaborator = Collaborator.new
-    @user = User.all
+    @users = User.all
     @wiki = Wiki.find(params[:wiki_id])
   end
 

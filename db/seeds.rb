@@ -55,7 +55,8 @@ admin.save!
    Wiki.create!(
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph,
-     user:   User.last,
+     user:   User.all.sample,
+     private: false,
      created_at: Faker::Date.between(14.days.ago, 7.days.ago),
      updated_at: Faker::Date.between(6.days.ago, Date.today)
    )

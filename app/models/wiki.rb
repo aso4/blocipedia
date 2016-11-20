@@ -8,6 +8,8 @@ class Wiki < ApplicationRecord
 
   before_create :default_wiki_to_public
 
+  scope :is_public, -> { where(private: false) }
+
   private
 
   def default_wiki_to_public
