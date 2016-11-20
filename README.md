@@ -1,4 +1,4 @@
-##### Blocipedia
+### Blocipedia
 ----
 
 An application made using Ruby on Rails that allows users to create public and private Markdown-based wikis
@@ -13,6 +13,6 @@ A project from the Rails Web Development track on [Bloc](bloc.io).
 4. Offer three user roles: admin, standard, or premium (*complete*)
 5. Seed data with users and wikis (*complete*)
 6. Update user account from free to paid plan (*complete*)
-7. Create private wikis (*in progress*)
-8. Edit wikis using Markdown syntax
-9. Premium user: add and remove collaborators for private wikis
+7. Create private wikis (*complete*)
+8. Edit wikis using Markdown syntax (*complete*)
+9. Premium user: add and remove collaborators for private wikis (*complete*)

@@ -1,5 +1,6 @@
 class Wiki < ApplicationRecord
   belongs_to :user
+  has_many :collaborators
 
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
@@ -7,10 +8,11 @@ class Wiki < ApplicationRecord
 
   before_create :default_wiki_to_public
 
+  scope :is_public, -> { where(private: false) }
+
   private
 
   def default_wiki_to_public
     self.private ||= false
   end
-
 end
