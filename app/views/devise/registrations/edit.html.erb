@@ -55,7 +55,7 @@
 <% end %>
 
 <% if current_user.premium? %>
-<p><%= button_to "Downgrade To Standard", user_premium_to_standard_path(current_user), data: { confirm: 'Are you sure?' }, method: :post %></p>
+<p><%= button_to "Downgrade To Standard", user_premium_to_standard_path(current_user), data: { confirm: 'Your private wikis will become public. Are you sure?' }, method: :post %></p>
 <% else %>
 <% end %>
 

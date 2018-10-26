@@ -1,18 +1,5 @@
-##### Blocipedia
-----
+# Blocipedia
 
-An application made using Ruby on Rails that allows users to create public and private Markdown-based wikis
+A SaaS app that allows users to create public and private wikis, upgrade a user from standard to premium through a payment system, and add and remove collaborators (other users) to and from private wikis. The wikis support markdown.
 
-A project from the Rails Web Development track on [Bloc](bloc.io).
-
-##### *User Stories*
-
-1. User Sign Up (*complete*)
-2. User Sign In and Out (*complete*)
-3. Standard user: Create, read, update, and delete public wikis (*complete*)
-4. Offer three user roles: admin, standard, or premium (*complete*)
-5. Seed data with users and wikis (*complete*)
-6. Update user account from free to paid plan (*in progress*)
-7. Create private wikis
-8. Edit wikis using Markdown syntax
-9. Premium user: add and remove collaborators for private wikis
+The application runs on Ruby 2.3.0 and Rails 5.0.0.1. Please view the gemfile for application dependencies. The application uses SQLite for development and testing databases and Postgres for production. View the application in action at https://powerful-brushlands-47458.herokuapp.com
