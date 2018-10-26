@@ -2,7 +2,8 @@ require 'custom_logger'
 
 class WikisController < ApplicationController
     def index
-        @wikis = policy_scope(Wiki)
+        @wikis = Wiki.all
+        # policy_scope(Wiki)
     end
 
     def create
