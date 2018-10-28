@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   before_create :default_user_role_standard
+  # before_show :default_user_role_standard
+  # before_index :default_user_role_standard
 
   has_many :wikis
 
