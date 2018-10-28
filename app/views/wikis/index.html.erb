@@ -5,6 +5,9 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
+            <% if not current_user.present? %>
+              <% current_user = User.create %>
+            <% end %>
             <% if current_user.admin? || current_user.premium? %>
               <%= link_to wiki.title, wiki %>
             <% else %>
